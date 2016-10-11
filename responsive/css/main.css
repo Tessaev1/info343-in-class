@@ -1,0 +1,45 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    font-weight: 100;
+    font-size: 60px;
+    /*space between element boxes*/
+    margin: 0;
+    /*space between element border and content within*/
+    padding-top: 100px;
+}
+
+header {
+    background-image: linear-gradient(to bottom, #777, #555);
+    color: #FFF;
+}
+
+/* will apply to any element that has the class attribute "container"*/
+.container {
+    max-width: 1170px;
+    /*constrain width of box and have it remain centered*/
+    margin: 0 auto;
+}
+
+svg {
+    width: 40px;
+    fill: #444;
+}
+
+/* only applies when the condition of the media rule is met */
+@media (min-width: 768px) {
+    header {
+        background-image: url(../img/banner.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    .row {
+        display: flex;
+    }
+
+    .col {
+        flex-grow: 1;
+    }
+}
