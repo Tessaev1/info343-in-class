@@ -29,17 +29,19 @@
                 placeholder="find a name">
         </p>
 
+        <!--used for tabular representations of data-->
         <table class="table">
             <thead>
                 <tr>
                     <th>Name</th>
                     <th>Sex</th>
-                    <th>Count</th>
+                    <th id="count-col-header">Count</th>
                 </tr>
             </thead>
             <tbody>
                 <!--use JavaScript to generate the table rows-->
             </tbody>
+            <!--a tfoot tag can be used for footer rows, such as Total rows-->
         </table>
     </main>
 
@@ -50,6 +52,7 @@
     <script src="data/babynames-1996.js"></script>
 
     <!--our application script-->
+    <!--JS script files should always be at the end-->
     <script src="js/app.js"></script>
 </body>
 </html>
