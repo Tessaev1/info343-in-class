@@ -107,13 +107,10 @@ logValue("2016-10-27", formatAsDate);
  * Then try logging the same value but formatting it
  * as a currency instead.
  */
+
 var someNumber = 123456789;
-//logValue(...)
-
-
-
-
-
+logValue(someNumber, formatAsNumber);
+logValue(someNumber, formatAsCurrency);
 
 console.groupEnd();
 
@@ -139,6 +136,7 @@ var course = {
 };
 
 console.log("I'm taking", course.curriculum, course.num);
+// course["curriculum"];
 
 //if we want to access a property's value and we have
 //that property name in a string variable, we can do 
@@ -190,11 +188,10 @@ console.log("property names:", propNames);
  * see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
  */
 
-
-
-
-
-
+// hit f2 to rename variable
+propNames.forEach(function(name) {
+    console.log(name + " = " + course[name]);
+});
 
 
 //FYI, this is essentially how the .forEach()
@@ -351,6 +348,17 @@ console.log("Total count", formatAsNumber(totalCount));
  * just reverse the logic in your compare function.
  */
 
+var males = males.sort(function(rec1, rec2) {
+    return rec2.count - rec1.count;
+});
+
+var mostPopularRecs = males.slice(0,10);
+
+var mostPopularNames = mostPopularRecs.map(function(rec) {
+    return rec.name;
+});
+
+console.log("Most popular male baby names: ", mostPopularNames.join(", "));
 
 
 /**
@@ -369,8 +377,9 @@ console.log("Total count", formatAsNumber(totalCount));
  * top 10 and write those to the console.
  */
 
+// var allNames = Object.keys(BABYNAMES);
 
-
+// allNames.forEach()
 
 
 console.groupEnd();
