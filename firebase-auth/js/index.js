@@ -9,7 +9,14 @@ signUpForm.addEventListener("submit", function(evt) {
 
     //use Firebase to sign in 
     //using the email name and password...
-
+    firebase.auth().signInWithEmailAndPassword(emailInput.value, passwordInput.value)
+        .then(function() {
+            window.location = "secure.html";
+        })
+        .catch(function(err) {
+            //better approach: add div to webpage, when error occurs show custom error 
+            alert(err.message);
+        });
 
 
     return false;
