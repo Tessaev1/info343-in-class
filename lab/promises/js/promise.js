@@ -9,12 +9,31 @@
   - With the result of that request, make another request to determine the current weather
     - Use http://openweathermap.org/current
       - You will need to sign up for an API key. Follow the instructions on how to do that here: http://openweathermap.org/appid
-    - After you have your API key, pick an API call to use. When you are using it, make sure you remember to append your API key 
-      on to the end of the url.
+    - After you have your API key, pick an API call to use. When you are using it, make sure you remember to append your API key on to the end of the url.
 
   */
- 
- //part 1 code
+
+// apiKey: ddbd5ff7e4e133ea6061ce83cd60270b
+var req1 = function() {
+  return fetch("https://freegeoip.net/json/");
+}
+req1().then(function() {
+  console.log("asdf");
+});
+var req2 = function() {
+  return fetch("api.openweathermap.org/data/2.5/weather?q=Seattle&APPID=ddbd5ff7e4e133ea6061ce83cd60270b");
+}
+
+var weatherResults = document.getElementById("fetch-weather");
+weatherResults.addEventListener("click", function() { 
+  // console.log("clicked");
+  req1().then(req2).then(function() {
+    console.log("everything is done");
+  })
+  .catch(function() {
+    console.log("error");
+  });
+});
 
  /*
   Part 2: Show the difference between parallel and serial promises
