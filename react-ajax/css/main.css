@@ -17,6 +17,7 @@ form {
 
 .card-image {
     min-height: 200px;
+    max-width: 200px;
     background-size: cover;
     background-position: center;
     cursor: pointer;
